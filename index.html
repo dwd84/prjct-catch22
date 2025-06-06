@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>???</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .message {
+      white-space: pre-wrap;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="content" class="hidden">
+    <div class="message">
+      youR eyes can't see yet, please leave before they see yoU here. Now
+
+      <br><br>
+
+      -.-- --- ..- / -.-. .- -. -. --- - / . ... -.-. .- .--. . / .---- ----. ---.. ....- --..-- / .--. .- - .... . - .. -.-. / - --- / - .-. -.-- --..-- / ... --- / -.. --- -. .----. - / .- - - . -- .--. - / .-. . ... .. ... - / ..- ... .-.-.-
+    </div>
+  </div>
+
+  <script>
+    // CONTROL: Change this value to "yes" or "no"
+    const shouldRedirect = "no"; // or "yes"
+    const redirectURL = "https://example.com"; // where to go if redirected
+
+    if (shouldRedirect.toLowerCase() === "yes") {
+      window.location.href = redirectURL;
+    } else {
+      document.getElementById("content").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
