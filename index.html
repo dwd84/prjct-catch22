@@ -9,32 +9,45 @@
       color: white;
       font-family: monospace;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      margin: 0;
+      flex-direction: column;
       text-align: center;
     }
-    .hidden-message {
+    .morse {
       opacity: 0.5;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
+  <script>
+    const redirect = "false"; // Change to "true" if redirection is needed
+    const redirectURL = "https://example.com"; // Only used if redirect is true
 
-<script>
-  const shouldRedirect = false; // Set to true when ready to redirect
-  const redirectURL = "https://example.com"; // Replace with your actual URL
+    if (redirect === "true") {
+      window.location.href = redirectURL;
+    } else {
+      document.body.innerHTML = `
+        <div>
+          <h1>youR eyes can't see yet, please leave before they see yoU here. Now</h1>
+          <div class="morse">
+            yoU CANnot ESCAPE 1984, PATHetic TO TRY, SO don't Attempt reSIST US.
+          </div>
+        </div>
+      `;
 
-  if (shouldRedirect) {
-    window.location.href = redirectURL;
-  } else {
-    document.write("<h1>youR eyes can't see yet,<br>please leave before they see yoU here. Now</h1>");
-    document.write("<div class='hidden-message'>yoU CANnot ESCAPE 1984, PATHetic TO TRY, SO don't Attempt reSIST US.</div>");
-  }
-</script>
-
+      // 60% chance to download the audio
+      if (Math.random() < 0.6) {
+        const link = document.createElement('a');
+        link.href = "https://github.com/dwd84/prjct-catch22/raw/refs/heads/main/flashbacksof84.mp3";
+        link.download = "flashbacksof84.mp3";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  </script>
 </body>
 </html>
